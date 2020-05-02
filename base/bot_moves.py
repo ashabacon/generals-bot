@@ -32,9 +32,9 @@ def move_priority(gamemap):
 def move_outward(gamemap, path=[]):
 	move_swamp = (False, False)
 
-	for source in gamemap.tiles[gamemap.player_index]: # Check Each Owned Tile
+	for source in gamemap.tiles[gamemap.player_index]: # Check Each Of Your Owned Tiles
 		if source.army >= 2 and source not in path: # Find One With Armies
-			target = source.neighbor_to_attack(path)
+			target = source.neighbor_to_attack(path) # See if you can attack any of the neighbors
 			if target:
 				if not target.isSwamp:
 					return (source, target)
@@ -74,7 +74,7 @@ def _move_path_largest(path):
 
 	dest = path[largest_index+1]
 	return (largest, dest)
-	
+
 
 def _move_path_capture(path):
 	source = path[0]

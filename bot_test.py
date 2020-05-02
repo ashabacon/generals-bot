@@ -22,9 +22,6 @@ def make_move(currentBot, currentMap):
 	_bot = currentBot
 	_map = currentMap
 
-	if _map.turn < 24 and currentBot._gameType != "private":
-		return
-
 	start_time = time.time()
 
 	if not move_priority():
